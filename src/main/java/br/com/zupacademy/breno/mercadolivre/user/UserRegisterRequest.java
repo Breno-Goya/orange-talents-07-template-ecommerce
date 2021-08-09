@@ -1,5 +1,7 @@
 package br.com.zupacademy.breno.mercadolivre.user;
 
+import br.com.zupacademy.breno.mercadolivre.validations.UniqueValue;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -9,6 +11,7 @@ public class UserRegisterRequest {
 
     @Email
     @NotBlank
+    @UniqueValue(domainClass = User.class, fieldName = "emailLogin")
     private String emailLogin;
 
     @NotBlank
