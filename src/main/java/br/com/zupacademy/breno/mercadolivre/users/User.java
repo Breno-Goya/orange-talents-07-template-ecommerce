@@ -1,4 +1,4 @@
-package br.com.zupacademy.breno.mercadolivre.user;
+package br.com.zupacademy.breno.mercadolivre.users;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

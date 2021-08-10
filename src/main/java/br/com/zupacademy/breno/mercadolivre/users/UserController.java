@@ -1,4 +1,4 @@
-package br.com.zupacademy.breno.mercadolivre.user;
+package br.com.zupacademy.breno.mercadolivre.users;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

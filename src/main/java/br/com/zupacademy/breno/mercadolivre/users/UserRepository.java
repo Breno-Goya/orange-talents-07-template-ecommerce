@@ -1,4 +1,4 @@
-package br.com.zupacademy.breno.mercadolivre.user;
+package br.com.zupacademy.breno.mercadolivre.users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

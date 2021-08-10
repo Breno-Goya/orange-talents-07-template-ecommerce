@@ -1,4 +1,4 @@
-package br.com.zupacademy.breno.mercadolivre.user;
+package br.com.zupacademy.breno.mercadolivre.users;
 
 import br.com.zupacademy.breno.mercadolivre.validations.UniqueValue;
 
