@@ -21,4 +21,6 @@ public @interface ExistId {
     String fieldName();
 
     Class<?> domainClass();
+
+    boolean permiteNulo() default false;
 }

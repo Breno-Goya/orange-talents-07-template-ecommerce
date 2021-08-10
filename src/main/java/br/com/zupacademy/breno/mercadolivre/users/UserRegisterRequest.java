@@ -11,20 +11,20 @@ public class UserRegisterRequest {
 
     @Email
     @NotBlank
-    @UniqueValue(domainClass = User.class, fieldName = "emailLogin")
-    private String emailLogin;
+    @UniqueValue(domainClass = User.class, fieldName = "email")
+    private String email;
 
     @NotBlank
     @Size(min = 6)
     private String password;
 
     public UserRegisterRequest(String emailLogin, String password) {
-        this.emailLogin = emailLogin;
+        this.email = emailLogin;
         this.password = password;
     }
 
     public Optional<User> convert() {
-        User user = new User(emailLogin, new Password(password));
+        User user = new User(email, new Password(password));
         return Optional.of(user);
     }
 }

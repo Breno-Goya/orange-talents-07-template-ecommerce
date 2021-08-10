@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -20,8 +21,9 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createNewCategory (@Valid @RequestBody CategoryRegisterRequest categoryRequest) {
-        Optional<Category>  categoryObject =  categoryRequest.convert(repository);
+    @Transactional
+    public ResponseEntity<?> createNewCategory (@RequestBody @Valid CategoryRegisterRequest categoryRequest) {
+        Optional<Category> categoryObject = categoryRequest.convert(repository);
         if(categoryObject.isPresent()) {
             repository.save(categoryObject.get());
             return ResponseEntity.ok().build();

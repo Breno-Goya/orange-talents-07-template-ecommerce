@@ -16,19 +16,19 @@ public class CategoryRegisterRequest {
 
     @JsonProperty(value = "superCategory")
     @Positive
-//    @ExistId(domainClass = Category.class, fieldName = "id")
-    private Long superCategory;
+    @ExistId(domainClass = Category.class, fieldName = "id", permiteNulo = true)
+    private Long superCategoryId;
 
-    public CategoryRegisterRequest(String name, Long superCategory) {
+    public CategoryRegisterRequest(String name, Long superCategoryId) {
         this.name = name;
-        this.superCategory = superCategory;
+        this.superCategoryId = superCategoryId;
     }
 
     public Optional<Category> convert(CategoryRepository repository) {
-        Category category = new Category(name);
+       Category category = new Category(name);
 
-        if(superCategory != null) {
-            Optional<Category> superCategoryObject = repository.findById(superCategory);
+        if(superCategoryId != null) {
+            Optional<Category> superCategoryObject = repository.findById(superCategoryId);
 
             category.setSuperCategory(superCategoryObject.get());
         }
